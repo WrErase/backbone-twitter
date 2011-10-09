@@ -1,0 +1,71 @@
+
+%script{:type => 'text/template', :id => 'account-tmpl'}
+  #rate_limit
+    %p Remaining Hits: ${remaining_hits}
+    %p Reset: ${reset_time}
+  #account_totals
+    %p Following: ${friends}
+    %p Followers: ${followers}
+    %p Tweets: ${updates}
+
+
+%script{:type => 'text/template', :id => 'user-tmpl'}
+  %img{:width => "120", :src => "${profile_image_url}"}
+  %div
+    %h2 ${name}
+    %p @${screen_name} (${location})
+
+  %div
+    %p {{html description}}
+    %p
+      %a{:href => "${url}"} ${url}
+
+  %div
+    %p
+      Followers: ${followers_count}, Following: ${friend_count},
+      Tweets: ${statuses_count}
+
+%script{:type => 'text/template', :id => 'result-tmpl'}
+  %img{:height => "50", :width => "50", :src => "${profile_image_url}"}
+  %p
+    %strong
+      %a{:href => "#users/show/${from_user}"} ${from_user}
+  %p
+    {{html text}}
+  %p{:class => 'time-ago'}
+    %a{:href => '#statuses/show/${id_str}'}${time_ago}
+  %p Location ${location}
+
+
+%script{:type => 'text/template', :id => 'tweet-detail-tmpl'}
+  #user-info
+    %img{:height => '50', :width => '50', :src => '${user.profile_image_url}'}
+    %p
+      %strong
+        @
+        %a{:href => "#users/show/${user.screen_name}"} ${user.screen_name}
+  #tweet-text-large
+    %p {{html text}}
+  %p
+    ${time_ago} via {{html source}}
+  {{if retweet_count}}
+  %p Retweets: ${retweet_count}
+  {{/if}}
+
+
+%script{:type => 'text/template', :id => 'tweet-tmpl'}
+  {{if retweeted_status}}
+  %img{:height => "50", :width => "50", :src => "${retweeted_status.user.profile_image_url}"}
+  {{else}}
+  %img{:height => "50", :width => "50", :src => "${user.profile_image_url}"}
+  {{/if}}
+
+  %p
+    %strong
+      %a{:href => "#users/show/${user.screen_name}"} ${user.screen_name}
+  %p
+    {{html text}}
+  %p{:class => 'time-ago'}
+    %a{:href => '#statuses/show/${id_str}'} ${time_ago}
+  %p Retweets: ${retweet_count}
+

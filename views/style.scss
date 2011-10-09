@@ -1,0 +1,72 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+//  background: lightgray;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+}
+
+#map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  background: #D6D6D6;
+
+  #menu {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+
+    a {
+      padding-right: 15px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #aaa;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+  
+.time-ago {
+  font-size: 11px;
+}
+
+.user-info {
+  padding: 10px;
+}
+
+.tweet {
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  img {
+    float: left;
+    margin-right: 8px;
+  }
+}
