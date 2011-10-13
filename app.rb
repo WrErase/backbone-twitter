@@ -1,7 +1,10 @@
 require 'sinatra'
 require 'haml'
-require 'execjs'
-require 'coffee-script'
+require 'barista'
+
+class Application < Sinatra::Base
+  register Barista::Integration::Sinatra
+end
 
 get '/stylesheets/style.css' do
   scss :style
