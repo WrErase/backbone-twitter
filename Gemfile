@@ -2,4 +2,8 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'haml'
-gem 'barista'
+gem 'sass'
+
+group :development do
+  gem 'coffee-script'
+end
