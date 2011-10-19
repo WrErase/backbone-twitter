@@ -540,6 +540,7 @@ $ ->
     }
 
     index: ->
+      @navigate('#nearby', {triggerRoute: true})
 
     nearby: (query) ->
       if Modernizr.geolocation
